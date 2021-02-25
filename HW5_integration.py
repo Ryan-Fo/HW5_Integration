@@ -52,11 +52,10 @@ def simpson_rule(f, a=None, b=None, n=None):
     value = 0.
     for x in np.linspace(a, b-h, n-1):
             value += (h/3.) * (f(x) + (4.*(f(x + h))) + (f(x + h + h)))
-            #value += 0.5*(f(x+h)+f(x))*h trapezoidal method for last term.. but how to seperate it..
     return value / 2
 
-#couple of bugs here. Writer's notes:
-#1 - requires me to divide by 2 to find relatively accurate value (may be numerical mistake)
+#Writer's notes:
+#1 - requires me to divide by 2 to find relatively accurate value
 #2 - does not take into account extra ending steps to impliment trapezoidal rule / proper spare end point integration
 
 def relative_error(true=None, estimate=None):
